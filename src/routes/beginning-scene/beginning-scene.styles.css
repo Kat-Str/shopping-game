@@ -1,0 +1,27 @@
+.beginning-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 100px;
+}
+
+.dishes-image {
+  position: relative;
+  z-index: 1;
+}
+
+.phone-image {
+  position: relative;
+  z-index: 2;
+  margin-top: -10px;
+}
+
+
+@media (max-width: 768px) {
+  .phone-image {
+    margin-top: -10px;
+  }
+}

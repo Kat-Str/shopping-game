@@ -1,0 +1,26 @@
+.phone-notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.phone-image {
+  max-width: 100%;
+  z-index: 1;
+}
+
+.envelope-image {
+  max-width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .envelope-image {
+    max-width: 40%;
+  }
+}
