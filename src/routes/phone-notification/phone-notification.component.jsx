@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import NewMessage from "./images/new-message.png";
 import Envelope from "./images/envelope.png";
 import EnvelopeOpen from "./images/envelope-open.png";
@@ -23,11 +24,13 @@ const PhoneNotification = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <img
-          src={isHovered ? EnvelopeOpen : Envelope}
-          alt={isHovered ? "envelope-open" : "envelope"}
-          className="envelope"
-        />
+        <Link to="/messages">
+          <img
+            src={isHovered ? EnvelopeOpen : Envelope}
+            alt={isHovered ? "envelope-open" : "envelope"}
+            className="envelope"
+          />
+        </Link>
       </div>
     </div>
   );
