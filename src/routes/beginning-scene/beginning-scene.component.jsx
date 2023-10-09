@@ -4,16 +4,24 @@ import Dishes from "./images/dishes.png";
 import PhoneOff from "./images/phone-off.png";
 import PhoneOn from "./images/phone-on.png";
 import "./beginning-scene.styles.css";
+import MessageNotification from "../../assets/audio/message-notification.mp3";
 
 const BeginningScene = () => {
   const [showNewImage, setShowNewImage] = useState(false);
+  const audio = new Audio(MessageNotification);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowNewImage(true);
-    }, 5000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (showNewImage) {
+      audio.play();
+    }
+  }, [showNewImage, audio]);
 
   return (
     <div className="beginning-scene">
