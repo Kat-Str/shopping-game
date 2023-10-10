@@ -1,0 +1,8 @@
+.button-arrow img{
+    width: 100px;
+    transform: translate(50%, 280%);
+}
+
+.button-arrow{
+    width: 0;
+}
