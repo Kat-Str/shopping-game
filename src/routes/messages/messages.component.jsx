@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import MessagesOne from "./images/messages-one.png";
 import ButtonArrow from "./images/button-arrow.png";
 import ButtonArrowClick from "./images/button-arrow-click.png";
+import HoverSound from "../../assets/audio/hover-button-sound.wav";
 import "./messages.styles.css";
 
 const Messages = () => {
   // Button animation
   const [isHovered, setIsHovered] = useState(false);
+  const sound = new Audio(HoverSound);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
+    sound.play();
   };
 
   const handleMouseLeave = () => {

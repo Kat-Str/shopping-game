@@ -1,8 +1,29 @@
+import React, { useState } from "react";
 import Grocery from "./images/shopping-cats.gif";
-import DefaultButton from "../../components/default-button/default-button.component";
 import { Link } from "react-router-dom";
+import ButtonStart from "./images/start-button.png";
+import ButtonStartClick from "./images/start-button-click.png";
+import StartSound from "../../assets/audio/start-sound.wav";
+import "./home.styles.css";
 
 const Home = () => {
+  // Hover
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  //Click
+  const handleClick = () => {
+    const sound = new Audio(StartSound);
+    sound.play();
+  };
+
   return (
     <div>
       <h1
@@ -13,9 +34,19 @@ const Home = () => {
       </h1>
       <img src={Grocery} alt="grocery" width={300} />
       <br />
-      <Link to="/start">
-        <DefaultButton buttonText="START" />
-      </Link>
+      <div className="button-div">
+        <Link to="/start">
+          <img
+            onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="start-button"
+            src={isHovered ? ButtonStartClick : ButtonStart}
+            alt="start"
+            width={210}
+          />
+        </Link>
+      </div>
     </div>
   );
 };
