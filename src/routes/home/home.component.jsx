@@ -5,6 +5,7 @@ import ButtonStart from "./images/start-button.png";
 import ButtonStartClick from "./images/start-button-click.png";
 import StartSound from "../../assets/audio/start-sound.wav";
 import "./home.styles.css";
+import GameTheme from "../../assets/audio/shopping-game-theme.mp3";
 
 const Home = () => {
   // Hover
@@ -26,6 +27,9 @@ const Home = () => {
 
   return (
     <div>
+      <audio autoPlay loop>
+        <source src={GameTheme} type="audio/mpeg" />
+      </audio>
       <h1
         title='It means "shopping" in Polish'
         style={{ fontSize: "60px", fontWeight: "normal" }}

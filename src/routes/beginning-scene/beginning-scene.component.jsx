@@ -66,7 +66,12 @@ const BeginningScene = () => {
       )}
       {showNewImage ? (
         <Link to="/notification">
-          <img src={PhoneOn} alt="phone" className="phone-image" width={150} />
+          <img
+            src={PhoneOn}
+            alt="phone"
+            className="phone-image  phone-with-message"
+            width={150}
+          />
         </Link>
       ) : (
         <img src={PhoneOff} alt="phone" className="phone-image" width={150} />
