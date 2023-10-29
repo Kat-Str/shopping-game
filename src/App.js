@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import GameMenu from "./routes/game-menu/game-menu.component";
 import Home from "./routes/home/home.component";
 import BeginningScene from "./routes/beginning-scene/beginning-scene.component";
 import PhoneNotification from "./routes/phone-notification/phone-notification.component";
@@ -11,7 +12,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<GameMenu />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/start" element={<BeginningScene />} />
         <Route path="/notification" element={<PhoneNotification />} />
         <Route path="/messages" element={<Messages />} />

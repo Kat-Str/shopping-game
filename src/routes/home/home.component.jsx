@@ -6,13 +6,16 @@ import ButtonStartClick from "./images/start-button-click.png";
 import StartSound from "../../assets/audio/start-sound.wav";
 import "./home.styles.css";
 import GameTheme from "../../assets/audio/shopping-game-theme.mp3";
+import HoverSound from "../../assets/audio/hover-button-sound.wav";
 
 const Home = () => {
   // Hover
   const [isHovered, setIsHovered] = useState(false);
+  const sound = new Audio(HoverSound);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
+    sound.play();
   };
 
   const handleMouseLeave = () => {
